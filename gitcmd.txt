@@ -1,0 +1,126 @@
+git --version
+---
+git config --global user.name "Sachin Bhosale"
+git config --global user.email "sdbhosale@gmail.com"
+---
+check
+git config --global user.name
+git config --global user.email
+---
+To change username and user email
+git config --global --edit
+---
+Vim editor
+:q {Exit form the Vim editor}
+---
+To display number of branches
+git branch
+---
+To display Total number of commit :
+git log
+---
+To check status :
+git status
+---
+added firstfile.txt in main directory
+
+PS D:\gitlearning> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        firstfile.txt
+---
+PS D:\gitlearning> git add .\firstfile.txt
+PS D:\gitlearning> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md    
+        new file:   firstfile.txt
+---
+PS D:\gitlearning> git commit -m "Date is updated in Readme and new txt file {firstfile.txt} is added."
+[master 9df2404] Date is updated in Readme and new txt file {firstfile.txt} is added.
+ 2 files changed, 2 insertions(+)
+ create mode 100644 firstfile.txt
+---
+PS D:\gitlearning> git status
+On branch master
+nothing to commit, working tree clean
+---
+To display total number of commits:
+git log
+
+PS D:\gitlearning> git log
+commit 9df2404a8c50eb634229da678a03b3c5760439ce (HEAD -> master)
+Author: iamsdbhosale <sdbhosale@gmail.com>
+Date:   Fri Apr 11 21:22:47 2025 +0530
+
+    Date is updated in Readme and new txt file {firstfile.txt} is added.
+
+commit d56a632281592c45f471725658d264d089569211 (origin/main, origin/HEAD, main)
+Author: Sachin Bhosale <157766383+iamsdbhosale@users.noreply.github.com>
+Date:   Mon Oct 28 21:16:38 2024 +0530
+
+    Update README.md
+
+commit 6eff9ca89c8a47c58c4cc1236e30d34720ef9267
+Author: Sachin Bhosale <157766383+iamsdbhosale@users.noreply.github.com>
+Date:   Mon Oct 28 21:13:42 2024 +0530
+
+    Initial commit
+---
+To go to previous changes as per commit hash code
+
+git checkout <commit hash code/branch nage>
+
+PS D:\gitlearning> git checkout 6eff9ca89c8a47c58c4cc1236e30d34720ef9267
+Note: switching to '6eff9ca89c8a47c58c4cc1236e30d34720ef9267'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 6eff9ca Initial commit
+---
+To go to direct recent changes :
+git checkout master
+---
+PS D:\gitlearning> git branch dev
+PS D:\gitlearning> git branch
+  dev
+  main
+* master
+---
+
+git checkout -b sdbhosale/feature
+---
+to merge code and files from one branch to another:
+git checkout <branch name in which you want to bring changes in>
+git merge <branch name modified>
+---
+git remote -v
+---
+PS D:\gitlearning> git remote -v
+origin  https://github.com/iamsdbhosale/gitlearning.git (fetch)
+origin  https://github.com/iamsdbhosale/gitlearning.git (push) 
+---
+git remote add origin https://github.com/iamsdbhosale/letslearngit.git
+git branch -M main
+git push -u origin main
+---
+git remote add origin https://github.com/iamsdbhosale/gitlearning.git
