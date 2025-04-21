@@ -124,3 +124,42 @@ git branch -M main
 git push -u origin main
 ---
 git remote add origin https://github.com/iamsdbhosale/gitlearning.git
+----------------------------------------------------------------------
+Question :
+Please resolve - "remote: Permission to Dexo145/DEX.git denied to iamsdbhosale. 
+fatal: unable to access 'https://github.com/Dexo145/DEX.git/': The requested URL returned error: 403"
+
+ChatGPT :
+That error means you're trying to push code to a GitHub repository you don’t have permission to write to. You're logged in as iamsdbhosale, but the repo belongs to Dexo145.
+
+🔍 Why it happens :
+You're trying to push to https://github.com/Dexo145/DEX.git, but:
+	You're not the owner, or
+	You're not added as a collaborator on that repo.
+
+✅ Solutions
+✅ Option 1: Get access to the original repo
+If you’re supposed to push to Dexo145/DEX:
+	Ask the owner (Dexo145) to add you as a collaborator:
+		Go to the repo > Settings > Collaborators > add iamsdbhosale
+
+	Accept the invite in your email or GitHub notifications.
+
+	Then retry the push:
+
+git push -u origin main
+✅ Option 2: Push to your own GitHub repo instead
+If you just want to upload your project, do this:
+
+Go to GitHub
+
+Create a new repository under your account (iamsdbhosale)
+
+Copy the new URL (e.g., https://github.com/iamsdbhosale/your-repo-name.git)
+
+Change the remote URL in your local project:
+git remote set-url origin https://github.com/iamsdbhosale/your-repo-name.git
+
+Then push:
+git push -u origin main
+---
